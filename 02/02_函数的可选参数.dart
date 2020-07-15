@@ -1,8 +1,22 @@
 main(List<String> args) {
-  sayHello('why');
+  sayHello1('why');
+
+  sayHello2('why', 18, 1.88);
+
+  sayHello3('why', height: 1.88);
 }
 
-//name :必选参数
-void sayHello(String name) {
+//必选参数: 必须传
+void sayHello1(String name) {
   print(name);
 }
+
+//dart 没有函数重载
+//可选参数: 位置可选参数 - 命名可选参数
+//注意：只有可选参数才可以有默认值
+//位置可选参数: [int age, double height]
+//实参和形参在进行匹配时，是根据位置的匹配
+void sayHello2(String name, [int age = 10, double height = 2]) {}
+
+//命名可选参数
+void sayHello3(String name, {int age = 12, double height = 3.14}) {}
